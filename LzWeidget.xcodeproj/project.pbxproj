@@ -20,6 +20,7 @@
 		8B3621C21DAF50CC0069FAD2 /* lzFilterBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3621C11DAF50CC0069FAD2 /* lzFilterBarView.m */; };
 		8B3621C51DAF50EB0069FAD2 /* LzFilterBarItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3621C41DAF50EB0069FAD2 /* LzFilterBarItemView.m */; };
 		8B3621C81DAF52970069FAD2 /* FilterBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3621C71DAF52970069FAD2 /* FilterBarItem.m */; };
+		8B640C0A1ED663D000CEF362 /* LzDropDownBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B640C091ED663D000CEF362 /* LzDropDownBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,8 @@
 		8B3621C41DAF50EB0069FAD2 /* LzFilterBarItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LzFilterBarItemView.m; sourceTree = "<group>"; };
 		8B3621C61DAF52970069FAD2 /* FilterBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterBarItem.h; sourceTree = "<group>"; };
 		8B3621C71DAF52970069FAD2 /* FilterBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterBarItem.m; sourceTree = "<group>"; };
+		8B640C081ED663D000CEF362 /* LzDropDownBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LzDropDownBar.h; sourceTree = "<group>"; };
+		8B640C091ED663D000CEF362 /* LzDropDownBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LzDropDownBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +124,8 @@
 		8B3621BF1DAF50AC0069FAD2 /* LzFiterBar */ = {
 			isa = PBXGroup;
 			children = (
-				8B0E0BF61DB0BF700036ACB3 /* cell */,
+				8B640C081ED663D000CEF362 /* LzDropDownBar.h */,
+				8B640C091ED663D000CEF362 /* LzDropDownBar.m */,
 				8B3621C01DAF50CC0069FAD2 /* lzFilterBarView.h */,
 				8B3621C11DAF50CC0069FAD2 /* lzFilterBarView.m */,
 				8B3621C31DAF50EB0069FAD2 /* LzFilterBarItemView.h */,
@@ -130,6 +134,7 @@
 				8B3621C71DAF52970069FAD2 /* FilterBarItem.m */,
 				8B0E0BF31DB09E9E0036ACB3 /* FilterConditionContainer.h */,
 				8B0E0BF41DB09E9E0036ACB3 /* FilterConditionContainer.m */,
+				8B0E0BF61DB0BF700036ACB3 /* cell */,
 			);
 			path = LzFiterBar;
 			sourceTree = "<group>";
@@ -211,6 +216,7 @@
 				8B0E0BF51DB09E9E0036ACB3 /* FilterConditionContainer.m in Sources */,
 				8B3621C51DAF50EB0069FAD2 /* LzFilterBarItemView.m in Sources */,
 				8B3621C21DAF50CC0069FAD2 /* lzFilterBarView.m in Sources */,
+				8B640C0A1ED663D000CEF362 /* LzDropDownBar.m in Sources */,
 				8B3621C81DAF52970069FAD2 /* FilterBarItem.m in Sources */,
 				8B3621A71DAF502C0069FAD2 /* AppDelegate.m in Sources */,
 				8B0E0BFA1DB0BF700036ACB3 /* filterCell.m in Sources */,

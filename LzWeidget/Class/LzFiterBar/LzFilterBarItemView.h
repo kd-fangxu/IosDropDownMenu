@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "FilterBarItem.h"
+
+/**
+ 菜单子view
+ */
 @interface LzFilterBarItemView : UIView
 @property (nonatomic,strong) UILabel *title;
 @property (nonatomic,strong) UIImageView *rightIv;

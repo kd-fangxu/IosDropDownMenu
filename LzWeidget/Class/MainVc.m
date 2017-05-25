@@ -39,9 +39,16 @@
 
 
 
-
-    [self .view addSubview:barView];
+//    [self .view addSubview:barView];
     [barView setBarItemList:datalist];
+
+
+    _dropDownTestBar=[[LzDropDownBar alloc] initWithOrigin:CGPointMake(0, 100) andHeight:45];
+    _dropDownTestBar.backgroundColor=[UIColor greenColor];
+    _dropDownTestBar.delegate=self;
+    [_dropDownTestBar setBarItemList:datalist];
+    [self.view addSubview:_dropDownTestBar];
+    
 }
 
 
@@ -73,6 +80,11 @@
     [temAttay addObject:str];
 
     return temAttay;
+}
+-(UIView *)LzDropDownBar:(LzDropDownBar *)bar byTitle:(NSString *)menuTitle{
+    UIView * view=[[UIView alloc] init];
+    view.backgroundColor=[UIColor redColor];
+    return view;
 }
 -(void)onFilterMenuSelected:(NSDictionary *)filterConditionDic{
 }

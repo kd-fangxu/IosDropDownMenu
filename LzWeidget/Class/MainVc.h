@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LzDropDownBar.h"
 #import "lzFilterBarView.h"
-@interface MainVc : UIViewController <lzFilterBarViewDelegate>{
+@interface MainVc : UIViewController <lzFilterBarViewDelegate,LzDropDownBarDelegate>{
     lzFilterBarView * barView;
 }
-
+@property (nonatomic,strong)  LzDropDownBar  *dropDownTestBar;
 @end

@@ -57,7 +57,7 @@
                     _lastFilterBarItemView=_currentFilterBarItemView;
                     _currentFilterBarItemView=itemView;
                 }else{
-_currentFilterBarItemView=itemView;
+                    _currentFilterBarItemView=itemView;
                     _lastFilterBarItemView=_currentFilterBarItemView;
                 }
 
@@ -140,7 +140,7 @@ _currentFilterBarItemView=itemView;
             [self reloadFilterList];
             [UIView animateWithDuration:0.2 animations:^{
                 _maskView.hidden=NO;
-                _currentFilterBarItemView.rightIv.transform = CGAffineTransformMakeRotation(M_PI/2);
+                _currentFilterBarItemView.rightIv.transform = CGAffineTransformMakeRotation(M_PI);
             }];
             [UIView animateWithDuration:0.4 animations:^{
                 if (_showMode==tableViewMode) {
@@ -148,7 +148,7 @@ _currentFilterBarItemView=itemView;
                 }else{
                     _collectionView.frame=CGRectMake(0, self.frame.size.height, self.frame.size.width, 200);
                 }
-                self.frame=CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.frame.size.height+200);
+                self.frame=CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.frame.size.height+200);//保证下拉子view的焦点位于父view内
 
             }];
 
@@ -164,14 +164,14 @@ _currentFilterBarItemView=itemView;
                     _collectionView.frame=CGRectMake(0, 0, self.frame.size.width, 0);
                 }
                 _maskView.hidden=YES;
-                
+
             } completion:^(BOOL finished) {
                 [UIView animateWithDuration:0.2 animations:^{
                     _currentFilterBarItemView.rightIv.transform = CGAffineTransformMakeRotation(0);
                     _lastFilterBarItemView.rightIv.transform=CGAffineTransformMakeRotation(0);
                 }];
             }];
-            
+
         }
         _isShown=!_isShown;
     }];
@@ -259,7 +259,7 @@ _currentFilterBarItemView=itemView;
     [cell.btn setTitle:[_currentMenuList objectAtIndex:indexPath.row] forState:UIControlStateNormal];
     [cell.btn setTag:indexPath.row];
     [cell.btn addTarget:self action:@selector(onCollectBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
-//    cell.btn.text=[_currentMenuList objectAtIndex:indexPath.row];
+    //    cell.btn.text=[_currentMenuList objectAtIndex:indexPath.row];
     if ([_conditionContainer isMenuListItemSelected:_currentFilterBarItemView.baritem.title itemName:title]) {
         [cell.contentView setBackgroundColor:[UIColor colorWithRed:51/255 green:51/255 blue:51/255 alpha:0.1]];    }else{
             [cell.contentView setBackgroundColor:[UIColor whiteColor]];
@@ -311,9 +311,9 @@ _currentFilterBarItemView=itemView;
             }}
         if (view==nil&&_isShown) {
             return _maskView;
-
+            
         }
-
+        
     }
     return view;
 }
