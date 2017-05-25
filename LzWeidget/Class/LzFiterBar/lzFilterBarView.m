@@ -18,166 +18,33 @@
  }
  */
 - (instancetype)initWithOrigin:(CGPoint)origin andHeight:(CGFloat)height{
-    CGSize screenSize = [UIScreen mainScreen].bounds.size;
-    self = [self initWithFrame:CGRectMake(origin.x, origin.y, screenSize.width, height)];
+    self=[super initWithOrigin:origin andHeight:height];
     if (self) {
-        _separatorLineWidth=1;
-        _isShown=NO;
-        _selectedMode=MutiSelectedMode;
-        _showMode=collectionViewMode;
-        _conditionContainer=[[FilterConditionContainer alloc] init];
+        self.separatorLineWidth=1;
+        self.isShown=NO;
+        self.selectedMode=MutiSelectedMode;
+        self.showMode=collectionViewMode;
+        self.conditionContainer=[[FilterConditionContainer alloc] init];
+        self.dropDelegate=self;
     }
     return self;
 }
 
--(void)setBarItemList:(NSMutableArray *)barItemList{
-    _barItemList=barItemList;
-    [self addDataView];
-    if (_barItemList.count>0) {
-        NSInteger totalLenth=SCREEN_WIDTH-(_barItemList.count-1)*_separatorLineWidth;
-        NSInteger totalTextLength=0;
-        for (FilterBarItem * item in _barItemList) {
-            totalTextLength=totalTextLength+item.getContentLength;
-        }
-
-        NSInteger  orignXCursor=0;
-        for (int i=0; i<_barItemList.count; i++) {
-            FilterBarItem * item=[_barItemList objectAtIndex:i];
-            if (i>0) {
-                UIView * separatorLineView=[[UIView alloc] initWithFrame:CGRectMake(orignXCursor, 5, _separatorLineWidth, self.frame.size.height-10)];
-                [separatorLineView setBackgroundColor:[UIColor colorWithRed:51/255 green:51/255 blue:51/255 alpha:0.2]];
-                [self addSubview:separatorLineView];
-                orignXCursor=CGRectGetMaxX(separatorLineView.frame);
-            }
-            NSInteger ItemWidth=totalLenth*[item getContentLength]/totalTextLength;
-            LzFilterBarItemView *itemView=[[LzFilterBarItemView alloc] initWithFrameFilterBarItem:CGRectMake(orignXCursor, 0, ItemWidth, self.frame.size.height) Filter:item];
-
-            [itemView setOnBarItemClicked:^(LzFilterBarItemView * itemView) {
-                if (_currentFilterBarItemView) {
-                    _lastFilterBarItemView=_currentFilterBarItemView;
-                    _currentFilterBarItemView=itemView;
-                }else{
-                    _currentFilterBarItemView=itemView;
-                    _lastFilterBarItemView=_currentFilterBarItemView;
-                }
-
-                [self toggleFilterView];
-            }];
-            [self addSubview:itemView];
-            orignXCursor=CGRectGetMaxX(itemView.frame);
-
-        }
-    }
-}
-
--(void) addClickGesture:(UIView *) view{
-    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onMaskClick:)];
-    //将手势添加到需要相应的view中去
-    [view addGestureRecognizer:tapGesture];
-    [tapGesture setNumberOfTapsRequired:1];
-}
--(void) onMaskClick:(UITapGestureRecognizer *)gesture{
-    [self toggleFilterView];
-}
--(void)addDataView{
-
-    if(_maskView==nil){
-        _maskView=[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, SCREEN_HEIGHT)];
-        [_maskView setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.2]];
-        [self addClickGesture:_maskView];
-        _maskView.hidden=YES;
-    }
-    [self addSubview:_maskView];
-
-    if (_showMode==tableViewMode) {
-        if (_tableView==nil) {
-            _tableView=[[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width,10)];
-            [_tableView setBackgroundColor:[UIColor yellowColor]];
-            _tableView.delegate=self;
-            _tableView.dataSource=self;
-            _tableView.bounces=NO;
-            [self addSubview:_tableView];
-
-        }
-    }else if(_showMode==collectionViewMode){
-        layout = [[UICollectionViewFlowLayout alloc] init];
-        [layout setScrollDirection:UICollectionViewScrollDirectionVertical];
-        layout.minimumInteritemSpacing = 5.0f;
-        layout.minimumLineSpacing = 1.0f;
-        _collectionView=[[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width,0)collectionViewLayout:layout];
-        [_collectionView setUserInteractionEnabled:YES];
-        //         [self.collectView registerClass:[filterCell class] forCellWithReuseIdentifier:reuseIdentifier];
-        [_collectionView registerClass:[filterCell class] forCellWithReuseIdentifier:@"filterCell"];
-        _collectionView.delegate=self;
-        _collectionView.dataSource=self;
-        _collectionView.bounces=NO;
-        [_collectionView setBackgroundColor:[UIColor yellowColor]];
-        [self addSubview:_collectionView];
-    }
-
-}
 
 -(void) reloadFilterList{
-    if (_currentMenuList==nil) {
-        _currentMenuList=[[NSMutableArray alloc] init];
+    if (self.currentMenuList==nil) {
+        self.currentMenuList=[[NSMutableArray alloc] init];
     }
-    [_currentMenuList removeAllObjects];
-    [_currentMenuList addObjectsFromArray:[_delegate lzFilterBarView:self menuListForItemByTag:_currentFilterBarItemView.baritem.title]];
-    if (_showMode==tableViewMode) {
-        [_tableView reloadData];
+    [self.currentMenuList removeAllObjects];
+    [self.currentMenuList addObjectsFromArray:[self.delegate lzFilterBarView:self menuListForItemByTag:self.currentFilterBarItemView.baritem.title]];
+    if (self.showMode==tableViewMode) {
+        [self.tableView reloadData];
     }else{
-        [_collectionView reloadData];
+        [self.collectionView reloadData];
     }
 
 
 }
-
--(void)toggleFilterView{
-    [UIView animateWithDuration:0.3 animations:^{
-
-    } completion:^(BOOL finished) {
-        if (!_isShown) {//显示操作
-            [self reloadFilterList];
-            [UIView animateWithDuration:0.2 animations:^{
-                _maskView.hidden=NO;
-                _currentFilterBarItemView.rightIv.transform = CGAffineTransformMakeRotation(M_PI);
-            }];
-            [UIView animateWithDuration:0.4 animations:^{
-                if (_showMode==tableViewMode) {
-                    _tableView.frame=CGRectMake(0, self.frame.size.height, self.frame.size.width, 200);
-                }else{
-                    _collectionView.frame=CGRectMake(0, self.frame.size.height, self.frame.size.width, 200);
-                }
-                self.frame=CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.frame.size.height+200);//保证下拉子view的焦点位于父view内
-
-            }];
-
-        }else{//隐藏操作
-
-            self.frame=CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.frame.size.height-200);
-
-            [UIView animateWithDuration:0.1 animations:^{
-                if (_showMode==tableViewMode) {
-                    _tableView.frame=CGRectMake(0, 0, self.frame.size.width, 0);
-
-                }else{
-                    _collectionView.frame=CGRectMake(0, 0, self.frame.size.width, 0);
-                }
-                _maskView.hidden=YES;
-
-            } completion:^(BOOL finished) {
-                [UIView animateWithDuration:0.2 animations:^{
-                    _currentFilterBarItemView.rightIv.transform = CGAffineTransformMakeRotation(0);
-                    _lastFilterBarItemView.rightIv.transform=CGAffineTransformMakeRotation(0);
-                }];
-            }];
-
-        }
-        _isShown=!_isShown;
-    }];
-
-}
-
 
 #pragma mark UITableViewDelegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -185,14 +52,14 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (_delegate) {
-        return _currentMenuList.count;
+    if (self.delegate) {
+        return self.currentMenuList.count;
     }
     return 0;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString * title=[_currentMenuList objectAtIndex:indexPath.row];
+    NSString * title=[self.currentMenuList objectAtIndex:indexPath.row];
     static NSString *identifier = @"menuCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
@@ -203,7 +70,7 @@
         cell.textLabel.textColor = [UIColor blackColor];
         cell.textLabel.font = [UIFont systemFontOfSize:14];
     }
-    if ([_conditionContainer isMenuListItemSelected:_currentFilterBarItemView.baritem.title itemName:title]) {
+    if ([self.conditionContainer isMenuListItemSelected:self.currentFilterBarItemView.baritem.title itemName:title]) {
         [cell.contentView setBackgroundColor:[UIColor colorWithRed:51/255 green:51/255 blue:51/255 alpha:0.1]];    }else{
             [cell.contentView setBackgroundColor:[UIColor whiteColor]];
 
@@ -221,23 +88,23 @@
 
 
 -(void) doChangeConditon:(NSInteger *) row{
-    NSString * menuItemTitle=_currentFilterBarItemView.baritem.title;
-    NSString * confitionStr=[_currentMenuList objectAtIndex:row];
+    NSString * menuItemTitle=self.currentFilterBarItemView.baritem.title;
+    NSString * confitionStr=[self.currentMenuList objectAtIndex:row];
 
-    if ([_conditionContainer isMenuListItemSelected:menuItemTitle itemName:confitionStr]) {
-        if (_selectedMode==SingleSelectedMode) {
+    if ([self.conditionContainer isMenuListItemSelected:menuItemTitle itemName:confitionStr]) {
+        if (self.selectedMode==SingleSelectedMode) {
         }else{
-            [_conditionContainer removeConditon:menuItemTitle itemName:confitionStr];
+            [self.conditionContainer removeConditon:menuItemTitle itemName:confitionStr];
         }
     }else{
-        if(_selectedMode==SingleSelectedMode){
-            [_conditionContainer addContitionSigleModel:menuItemTitle itemName:confitionStr];
+        if(self.selectedMode==SingleSelectedMode){
+            [self.conditionContainer addContitionSigleModel:menuItemTitle itemName:confitionStr];
         }else{
-            [_conditionContainer addConditons:menuItemTitle itemName:confitionStr];
+            [self.conditionContainer addConditons:menuItemTitle itemName:confitionStr];
 
         }
     }
-    NSLog(@"%@", [_conditionContainer getSelectedMenuListByMenuTitle:menuItemTitle]);
+    NSLog(@"%@", [self.conditionContainer getSelectedMenuListByMenuTitle:menuItemTitle]);
 }
 
 #pragma mark collectionViewDelegate
@@ -247,20 +114,20 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
 
-    return [_currentMenuList count];
+    return [self.currentMenuList count];
 }
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
     return 1;
 };
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSString * title=[_currentMenuList objectAtIndex:indexPath.row];
+    NSString * title=[self.currentMenuList objectAtIndex:indexPath.row];
     filterCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"filterCell" forIndexPath:indexPath];
-    [cell.btn setTitle:[_currentMenuList objectAtIndex:indexPath.row] forState:UIControlStateNormal];
+    [cell.btn setTitle:[self.currentMenuList objectAtIndex:indexPath.row] forState:UIControlStateNormal];
     [cell.btn setTag:indexPath.row];
     [cell.btn addTarget:self action:@selector(onCollectBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
-    //    cell.btn.text=[_currentMenuList objectAtIndex:indexPath.row];
-    if ([_conditionContainer isMenuListItemSelected:_currentFilterBarItemView.baritem.title itemName:title]) {
+    //    cell.btn.text=[self.currentMenuList objectAtIndex:indexPath.row];
+    if ([self.conditionContainer isMenuListItemSelected:self.currentFilterBarItemView.baritem.title itemName:title]) {
         [cell.contentView setBackgroundColor:[UIColor colorWithRed:51/255 green:51/255 blue:51/255 alpha:0.1]];    }else{
             [cell.contentView setBackgroundColor:[UIColor whiteColor]];
 
@@ -276,7 +143,7 @@
 -(void)onCollectBtnClicked:sender{
     UIButton * btn=sender;
     [self doChangeConditon:btn.tag];
-    [_collectionView reloadData];
+    [self.collectionView reloadData];
 
     [self toggleFilterView];
 
@@ -292,25 +159,60 @@
 }
 
 
+#pragma  mark LzDropDownBarDelegate
+-(UIView *)LzDropDownBar:(LzDropDownBar *)bar byTitle:(NSString *)menuTitle{
+    if (self.showMode==tableViewMode) {
+        if (self.tableView==nil) {
+            self.tableView=[[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width,10)];
+            [self.tableView setBackgroundColor:[UIColor yellowColor]];
+            self.tableView.delegate=self;
+            self.tableView.dataSource=self;
+            self.tableView.bounces=NO;
+        }
+        [self reloadFilterList];
 
+      UIView* view=  [[UIView alloc] init];
+        view.backgroundColor=[UIColor redColor];
+         return  self.tableView;
+    }else if(self.showMode==collectionViewMode){
+        if (self.collectionView==nil) {
+            layout = [[UICollectionViewFlowLayout alloc] init];
+            [layout setScrollDirection:UICollectionViewScrollDirectionVertical];
+            layout.minimumInteritemSpacing = 5.0f;
+            layout.minimumLineSpacing = 1.0f;
+            self.collectionView=[[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width,0)collectionViewLayout:layout];
+            [self.collectionView setUserInteractionEnabled:YES];
+            //         [self.collectView registerClass:[filterCell class] forCellWithReuseIdentifier:reuseIdentifier];
+            [self.collectionView registerClass:[filterCell class] forCellWithReuseIdentifier:@"filterCell"];
+            self.collectionView.delegate=self;
+            self.collectionView.dataSource=self;
+            self.collectionView.bounces=NO;
+            [self.collectionView setBackgroundColor:[UIColor yellowColor]];
+
+        }
+         [self reloadFilterList];
+         return  self.collectionView;
+    }
+    return nil;
+};
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
     UIView *view = [super hitTest:point withEvent:event];
     if (view == nil) {
-        if (_showMode==tableViewMode) {
-            CGPoint tempoint = [_tableView convertPoint:point fromView:self];
-            if (CGRectContainsPoint(_tableView.bounds, tempoint))
+        if (self.showMode==tableViewMode) {
+            CGPoint tempoint = [self.tableView convertPoint:point fromView:self];
+            if (CGRectContainsPoint(self.tableView.bounds, tempoint))
             {
-                view = _tableView;
+                view = self.tableView;
             }
         }else{
-            CGPoint tempoint = [_collectionView convertPoint:point fromView:self];
-            if (CGRectContainsPoint(_collectionView.bounds, tempoint))
+            CGPoint tempoint = [self.collectionView convertPoint:point fromView:self];
+            if (CGRectContainsPoint(self.collectionView.bounds, tempoint))
             {
-                view = _collectionView;
+                view = self.collectionView;
             }}
-        if (view==nil&&_isShown) {
-            return _maskView;
+        if (view==nil&&self.isShown) {
+            return self.maskView;
             
         }
         

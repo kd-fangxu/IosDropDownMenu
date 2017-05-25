@@ -66,9 +66,7 @@
     [self setContentContainer:contentView];
     [self toggleFilterView];
 }
--(void)reload{
 
-}
 -(void)setBarItemList:(NSMutableArray *)barItemList{
     _barItemList=barItemList;
     [self addDataView];
@@ -119,8 +117,8 @@
     } completion:^(BOOL finished) {
         if (!_isShown) {//显示操作
             //            [self reloadFilterList];
-            if (_delegate&&[_delegate respondsToSelector:@selector(LzDropDownBar:byTitle:)]) {
-                [ self setContentContainer:[_delegate LzDropDownBar:self byTitle:_currentFilterBarItemView.baritem.title]];
+            if (_dropDelegate&&[_dropDelegate respondsToSelector:@selector(LzDropDownBar:byTitle:)]) {
+                [ self setContentContainer:[_dropDelegate LzDropDownBar:self byTitle:_currentFilterBarItemView.baritem.title]];
             }
             [UIView animateWithDuration:0.4 animations:^{
                 _maskView.hidden=NO;

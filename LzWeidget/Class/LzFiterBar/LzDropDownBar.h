@@ -24,7 +24,7 @@
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 
 
-@property (nonatomic,weak) id<LzDropDownBarDelegate>  delegate;
+@property (nonatomic,strong) id<LzDropDownBarDelegate>  dropDelegate;
 
 @property (nonatomic,assign) NSInteger separatorLineWidth;//分割线宽度
 @property (nonatomic,strong) NSMutableArray *barItemList; //menu数据源
@@ -38,4 +38,5 @@
 @property (nonatomic,strong) UIView *maskView;//遮罩背景
 
 - (instancetype)initWithOrigin:(CGPoint)origin andHeight:(CGFloat)height;
+-(void)toggleFilterView;
 @end

@@ -37,17 +37,17 @@
     [datalist addObject:item];
     [datalist addObject:item1];
 
+    [barView setShowMode:collectionViewMode];
 
-
-//    [self .view addSubview:barView];
+    [self .view addSubview:barView];
     [barView setBarItemList:datalist];
 
 
-    _dropDownTestBar=[[LzDropDownBar alloc] initWithOrigin:CGPointMake(0, 100) andHeight:45];
-    _dropDownTestBar.backgroundColor=[UIColor greenColor];
-    _dropDownTestBar.delegate=self;
-    [_dropDownTestBar setBarItemList:datalist];
-    [self.view addSubview:_dropDownTestBar];
+//    _dropDownTestBar=[[LzDropDownBar alloc] initWithOrigin:CGPointMake(0, 100) andHeight:45];
+//    _dropDownTestBar.backgroundColor=[UIColor greenColor];
+//    _dropDownTestBar.dropDelegate=self;
+//    [_dropDownTestBar setBarItemList:datalist];
+//    [self.view addSubview:_dropDownTestBar];
     
 }
 

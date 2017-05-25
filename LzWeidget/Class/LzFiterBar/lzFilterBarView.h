@@ -11,7 +11,7 @@
 #import "FilterBarItem.h"
 #import "LzFilterBarItemView.h"
 #import "FilterConditionContainer.h"
-
+#import "LzDropDownBar.h"
 @class lzFilterBarView;
 @protocol  lzFilterBarViewDelegate<NSObject>
 @required
@@ -23,7 +23,7 @@
 
 
 
-@interface lzFilterBarView : UIView <UITableViewDelegate,UITableViewDataSource,UICollectionViewDataSource,UICollectionViewDelegate>{
+@interface lzFilterBarView : LzDropDownBar <UITableViewDelegate,UITableViewDataSource,UICollectionViewDataSource,UICollectionViewDelegate,LzDropDownBarDelegate>{
     UICollectionViewFlowLayout *layout;
 }
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
@@ -43,15 +43,15 @@ typedef NS_ENUM(NSUInteger,ShowMode)
 };
 
 @property (nonatomic,weak) id<lzFilterBarViewDelegate>  delegate;
-@property (nonatomic,strong) LzFilterBarItemView *lastFilterBarItemView;//上一个筛选子项view
-@property (nonatomic,strong) LzFilterBarItemView *currentFilterBarItemView;//当前筛选子项view
+//@property (nonatomic,strong) LzFilterBarItemView *lastFilterBarItemView;//上一个筛选子项view
+//@property (nonatomic,strong) LzFilterBarItemView *currentFilterBarItemView;//当前筛选子项view
 @property (nonatomic,strong) NSMutableArray *currentMenuList;//当前的menu筛选子项
 
-@property (nonatomic,assign) NSInteger separatorLineWidth;//分割线宽度
-@property (nonatomic,strong) NSMutableArray *barItemList;
-@property (nonatomic,assign) Boolean isShown;
+//@property (nonatomic,assign) NSInteger separatorLineWidth;//分割线宽度
+//@property (nonatomic,strong) NSMutableArray *barItemList;
+//@property (nonatomic,assign) Boolean isShown;
 
-@property (nonatomic,strong) UIView *maskView;//遮罩背景
+//@property (nonatomic,strong) UIView *maskView;//遮罩背景
 @property (nonatomic,strong) FilterConditionContainer  *conditionContainer;//条件容器
 
 
