@@ -6,9 +6,9 @@
 //  Copyright © 2015年 淄博冠恒科技 TEL:0533-3571606. All rights reserved.
 //
 
-#import "filterCell.h"
+#import "BaseFilterCell.h"
 
-@implementation filterCell
+@implementation BaseFilterCell
 
 - (void)awakeFromNib {
     // Initialization code
@@ -19,7 +19,7 @@
     if (self)
     {
         // 初始化时加载collectionCell.xib文件
-        NSArray *arrayOfViews = [[NSBundle mainBundle] loadNibNamed:@"filterCell" owner:self options:nil];
+        NSArray *arrayOfViews = [[NSBundle mainBundle] loadNibNamed:@"BaseFilterCell" owner:self options:nil];
         
         // 如果路径不存在，return nil
         if (arrayOfViews.count < 1)

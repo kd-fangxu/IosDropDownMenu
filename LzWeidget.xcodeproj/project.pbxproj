@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8B0E0BF51DB09E9E0036ACB3 /* FilterConditionContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0E0BF41DB09E9E0036ACB3 /* FilterConditionContainer.m */; };
-		8B0E0BFA1DB0BF700036ACB3 /* filterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0E0BF81DB0BF700036ACB3 /* filterCell.m */; };
-		8B0E0BFB1DB0BF700036ACB3 /* filterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B0E0BF91DB0BF700036ACB3 /* filterCell.xib */; };
 		8B3621A41DAF502C0069FAD2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3621A31DAF502C0069FAD2 /* main.m */; };
 		8B3621A71DAF502C0069FAD2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3621A61DAF502C0069FAD2 /* AppDelegate.m */; };
 		8B3621AD1DAF502C0069FAD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B3621AB1DAF502C0069FAD2 /* Main.storyboard */; };
@@ -17,18 +14,27 @@
 		8B3621B21DAF502C0069FAD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B3621B01DAF502C0069FAD2 /* LaunchScreen.storyboard */; };
 		8B3621BD1DAF50950069FAD2 /* MainVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3621BB1DAF50950069FAD2 /* MainVc.m */; };
 		8B3621BE1DAF50950069FAD2 /* MainVc.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B3621BC1DAF50950069FAD2 /* MainVc.xib */; };
-		8B3621C21DAF50CC0069FAD2 /* lzFilterBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3621C11DAF50CC0069FAD2 /* lzFilterBarView.m */; };
-		8B3621C51DAF50EB0069FAD2 /* LzFilterBarItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3621C41DAF50EB0069FAD2 /* LzFilterBarItemView.m */; };
-		8B3621C81DAF52970069FAD2 /* FilterBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3621C71DAF52970069FAD2 /* FilterBarItem.m */; };
-		8B640C0A1ED663D000CEF362 /* LzDropDownBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B640C091ED663D000CEF362 /* LzDropDownBar.m */; };
+		8BD09E0E1EE68FD200DF8BF0 /* BaseFilterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD09DE61EE68FD200DF8BF0 /* BaseFilterCell.m */; };
+		8BD09E0F1EE68FD200DF8BF0 /* BaseFilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BD09DE71EE68FD200DF8BF0 /* BaseFilterCell.xib */; };
+		8BD09E101EE68FD200DF8BF0 /* FilterConditionContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD09DE91EE68FD200DF8BF0 /* FilterConditionContainer.m */; };
+		8BD09E111EE68FD200DF8BF0 /* BaseFilterChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD09DEC1EE68FD200DF8BF0 /* BaseFilterChooseView.m */; };
+		8BD09E121EE68FD200DF8BF0 /* SecTagFilterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD09DEF1EE68FD200DF8BF0 /* SecTagFilterCell.m */; };
+		8BD09E131EE68FD200DF8BF0 /* SecTagFilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BD09DF01EE68FD200DF8BF0 /* SecTagFilterCell.xib */; };
+		8BD09E141EE68FD200DF8BF0 /* SelectedConditionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD09DF31EE68FD200DF8BF0 /* SelectedConditionManager.m */; };
+		8BD09E151EE68FD200DF8BF0 /* TableSecTagFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD09DF51EE68FD200DF8BF0 /* TableSecTagFilterView.m */; };
+		8BD09E161EE68FD200DF8BF0 /* TableViewFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD09DF71EE68FD200DF8BF0 /* TableViewFilterView.m */; };
+		8BD09E171EE68FD200DF8BF0 /* LzDropDownBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD09DF91EE68FD200DF8BF0 /* LzDropDownBar.m */; };
+		8BD09E181EE68FD200DF8BF0 /* LzFilterBarItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD09DFB1EE68FD200DF8BF0 /* LzFilterBarItemView.m */; };
+		8BD09E191EE68FD200DF8BF0 /* FilterBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD09DFE1EE68FD200DF8BF0 /* FilterBarItem.m */; };
+		8BD09E1A1EE68FD200DF8BF0 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 8BD09E021EE68FD200DF8BF0 /* .gitkeep */; };
+		8BD09E1B1EE68FD200DF8BF0 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 8BD09E041EE68FD200DF8BF0 /* .gitkeep */; };
+		8BD09E1C1EE68FD200DF8BF0 /* TTGTagCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD09E061EE68FD200DF8BF0 /* TTGTagCollectionView.m */; };
+		8BD09E1D1EE68FD200DF8BF0 /* TTGTextTagCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD09E081EE68FD200DF8BF0 /* TTGTextTagCollectionView.m */; };
+		8BD09E1E1EE68FD200DF8BF0 /* UIView+AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD09E0A1EE68FD200DF8BF0 /* UIView+AutoLayout.m */; };
+		8BD09E1F1EE68FD200DF8BF0 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD09E0D1EE68FD200DF8BF0 /* UIView+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8B0E0BF31DB09E9E0036ACB3 /* FilterConditionContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterConditionContainer.h; sourceTree = "<group>"; };
-		8B0E0BF41DB09E9E0036ACB3 /* FilterConditionContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterConditionContainer.m; sourceTree = "<group>"; };
-		8B0E0BF71DB0BF700036ACB3 /* filterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = filterCell.h; sourceTree = "<group>"; };
-		8B0E0BF81DB0BF700036ACB3 /* filterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = filterCell.m; sourceTree = "<group>"; };
-		8B0E0BF91DB0BF700036ACB3 /* filterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = filterCell.xib; sourceTree = "<group>"; };
 		8B36219F1DAF502C0069FAD2 /* LzWeidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LzWeidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B3621A31DAF502C0069FAD2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8B3621A51DAF502C0069FAD2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -40,14 +46,38 @@
 		8B3621BA1DAF50950069FAD2 /* MainVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainVc.h; sourceTree = "<group>"; };
 		8B3621BB1DAF50950069FAD2 /* MainVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainVc.m; sourceTree = "<group>"; };
 		8B3621BC1DAF50950069FAD2 /* MainVc.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainVc.xib; sourceTree = "<group>"; };
-		8B3621C01DAF50CC0069FAD2 /* lzFilterBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lzFilterBarView.h; sourceTree = "<group>"; };
-		8B3621C11DAF50CC0069FAD2 /* lzFilterBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = lzFilterBarView.m; sourceTree = "<group>"; };
-		8B3621C31DAF50EB0069FAD2 /* LzFilterBarItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LzFilterBarItemView.h; sourceTree = "<group>"; };
-		8B3621C41DAF50EB0069FAD2 /* LzFilterBarItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LzFilterBarItemView.m; sourceTree = "<group>"; };
-		8B3621C61DAF52970069FAD2 /* FilterBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterBarItem.h; sourceTree = "<group>"; };
-		8B3621C71DAF52970069FAD2 /* FilterBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterBarItem.m; sourceTree = "<group>"; };
-		8B640C081ED663D000CEF362 /* LzDropDownBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LzDropDownBar.h; sourceTree = "<group>"; };
-		8B640C091ED663D000CEF362 /* LzDropDownBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LzDropDownBar.m; sourceTree = "<group>"; };
+		8BD09DE51EE68FD200DF8BF0 /* BaseFilterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseFilterCell.h; sourceTree = "<group>"; };
+		8BD09DE61EE68FD200DF8BF0 /* BaseFilterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseFilterCell.m; sourceTree = "<group>"; };
+		8BD09DE71EE68FD200DF8BF0 /* BaseFilterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseFilterCell.xib; sourceTree = "<group>"; };
+		8BD09DE81EE68FD200DF8BF0 /* FilterConditionContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterConditionContainer.h; sourceTree = "<group>"; };
+		8BD09DE91EE68FD200DF8BF0 /* FilterConditionContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterConditionContainer.m; sourceTree = "<group>"; };
+		8BD09DEB1EE68FD200DF8BF0 /* BaseFilterChooseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseFilterChooseView.h; sourceTree = "<group>"; };
+		8BD09DEC1EE68FD200DF8BF0 /* BaseFilterChooseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseFilterChooseView.m; sourceTree = "<group>"; };
+		8BD09DEE1EE68FD200DF8BF0 /* SecTagFilterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecTagFilterCell.h; sourceTree = "<group>"; };
+		8BD09DEF1EE68FD200DF8BF0 /* SecTagFilterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecTagFilterCell.m; sourceTree = "<group>"; };
+		8BD09DF01EE68FD200DF8BF0 /* SecTagFilterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecTagFilterCell.xib; sourceTree = "<group>"; };
+		8BD09DF21EE68FD200DF8BF0 /* SelectedConditionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectedConditionManager.h; sourceTree = "<group>"; };
+		8BD09DF31EE68FD200DF8BF0 /* SelectedConditionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectedConditionManager.m; sourceTree = "<group>"; };
+		8BD09DF41EE68FD200DF8BF0 /* TableSecTagFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableSecTagFilterView.h; sourceTree = "<group>"; };
+		8BD09DF51EE68FD200DF8BF0 /* TableSecTagFilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableSecTagFilterView.m; sourceTree = "<group>"; };
+		8BD09DF61EE68FD200DF8BF0 /* TableViewFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewFilterView.h; sourceTree = "<group>"; };
+		8BD09DF71EE68FD200DF8BF0 /* TableViewFilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewFilterView.m; sourceTree = "<group>"; };
+		8BD09DF81EE68FD200DF8BF0 /* LzDropDownBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LzDropDownBar.h; sourceTree = "<group>"; };
+		8BD09DF91EE68FD200DF8BF0 /* LzDropDownBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LzDropDownBar.m; sourceTree = "<group>"; };
+		8BD09DFA1EE68FD200DF8BF0 /* LzFilterBarItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LzFilterBarItemView.h; sourceTree = "<group>"; };
+		8BD09DFB1EE68FD200DF8BF0 /* LzFilterBarItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LzFilterBarItemView.m; sourceTree = "<group>"; };
+		8BD09DFD1EE68FD200DF8BF0 /* FilterBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterBarItem.h; sourceTree = "<group>"; };
+		8BD09DFE1EE68FD200DF8BF0 /* FilterBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterBarItem.m; sourceTree = "<group>"; };
+		8BD09E021EE68FD200DF8BF0 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		8BD09E041EE68FD200DF8BF0 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		8BD09E051EE68FD200DF8BF0 /* TTGTagCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTGTagCollectionView.h; sourceTree = "<group>"; };
+		8BD09E061EE68FD200DF8BF0 /* TTGTagCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTGTagCollectionView.m; sourceTree = "<group>"; };
+		8BD09E071EE68FD200DF8BF0 /* TTGTextTagCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTGTextTagCollectionView.h; sourceTree = "<group>"; };
+		8BD09E081EE68FD200DF8BF0 /* TTGTextTagCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTGTextTagCollectionView.m; sourceTree = "<group>"; };
+		8BD09E091EE68FD200DF8BF0 /* UIView+AutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AutoLayout.h"; sourceTree = "<group>"; };
+		8BD09E0A1EE68FD200DF8BF0 /* UIView+AutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AutoLayout.m"; sourceTree = "<group>"; };
+		8BD09E0C1EE68FD200DF8BF0 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		8BD09E0D1EE68FD200DF8BF0 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,16 +91,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8B0E0BF61DB0BF700036ACB3 /* cell */ = {
-			isa = PBXGroup;
-			children = (
-				8B0E0BF71DB0BF700036ACB3 /* filterCell.h */,
-				8B0E0BF81DB0BF700036ACB3 /* filterCell.m */,
-				8B0E0BF91DB0BF700036ACB3 /* filterCell.xib */,
-			);
-			path = cell;
-			sourceTree = "<group>";
-		};
 		8B3621961DAF502C0069FAD2 = {
 			isa = PBXGroup;
 			children = (
@@ -113,7 +133,7 @@
 		8B3621B91DAF507B0069FAD2 /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				8B3621BF1DAF50AC0069FAD2 /* LzFiterBar */,
+				8BD09DE21EE68FD200DF8BF0 /* LzDropDown */,
 				8B3621BA1DAF50950069FAD2 /* MainVc.h */,
 				8B3621BB1DAF50950069FAD2 /* MainVc.m */,
 				8B3621BC1DAF50950069FAD2 /* MainVc.xib */,
@@ -121,22 +141,131 @@
 			path = Class;
 			sourceTree = "<group>";
 		};
-		8B3621BF1DAF50AC0069FAD2 /* LzFiterBar */ = {
+		8BD09DE21EE68FD200DF8BF0 /* LzDropDown */ = {
 			isa = PBXGroup;
 			children = (
-				8B640C081ED663D000CEF362 /* LzDropDownBar.h */,
-				8B640C091ED663D000CEF362 /* LzDropDownBar.m */,
-				8B3621C01DAF50CC0069FAD2 /* lzFilterBarView.h */,
-				8B3621C11DAF50CC0069FAD2 /* lzFilterBarView.m */,
-				8B3621C31DAF50EB0069FAD2 /* LzFilterBarItemView.h */,
-				8B3621C41DAF50EB0069FAD2 /* LzFilterBarItemView.m */,
-				8B3621C61DAF52970069FAD2 /* FilterBarItem.h */,
-				8B3621C71DAF52970069FAD2 /* FilterBarItem.m */,
-				8B0E0BF31DB09E9E0036ACB3 /* FilterConditionContainer.h */,
-				8B0E0BF41DB09E9E0036ACB3 /* FilterConditionContainer.m */,
-				8B0E0BF61DB0BF700036ACB3 /* cell */,
+				8BD09DE31EE68FD200DF8BF0 /* LzFiterBar */,
+				8BD09DFF1EE68FD200DF8BF0 /* support */,
+			);
+			path = LzDropDown;
+			sourceTree = "<group>";
+		};
+		8BD09DE31EE68FD200DF8BF0 /* LzFiterBar */ = {
+			isa = PBXGroup;
+			children = (
+				8BD09DE41EE68FD200DF8BF0 /* cell */,
+				8BD09DE81EE68FD200DF8BF0 /* FilterConditionContainer.h */,
+				8BD09DE91EE68FD200DF8BF0 /* FilterConditionContainer.m */,
+				8BD09DEA1EE68FD200DF8BF0 /* FilterContentViews */,
+				8BD09DF81EE68FD200DF8BF0 /* LzDropDownBar.h */,
+				8BD09DF91EE68FD200DF8BF0 /* LzDropDownBar.m */,
+				8BD09DFA1EE68FD200DF8BF0 /* LzFilterBarItemView.h */,
+				8BD09DFB1EE68FD200DF8BF0 /* LzFilterBarItemView.m */,
+				8BD09DFC1EE68FD200DF8BF0 /* model */,
 			);
 			path = LzFiterBar;
+			sourceTree = "<group>";
+		};
+		8BD09DE41EE68FD200DF8BF0 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				8BD09DE51EE68FD200DF8BF0 /* BaseFilterCell.h */,
+				8BD09DE61EE68FD200DF8BF0 /* BaseFilterCell.m */,
+				8BD09DE71EE68FD200DF8BF0 /* BaseFilterCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		8BD09DEA1EE68FD200DF8BF0 /* FilterContentViews */ = {
+			isa = PBXGroup;
+			children = (
+				8BD09DF11EE68FD200DF8BF0 /* SelectedConditionManager */,
+				8BD09DED1EE68FD200DF8BF0 /* cell */,
+				8BD09DEB1EE68FD200DF8BF0 /* BaseFilterChooseView.h */,
+				8BD09DEC1EE68FD200DF8BF0 /* BaseFilterChooseView.m */,
+				8BD09DF41EE68FD200DF8BF0 /* TableSecTagFilterView.h */,
+				8BD09DF51EE68FD200DF8BF0 /* TableSecTagFilterView.m */,
+				8BD09DF61EE68FD200DF8BF0 /* TableViewFilterView.h */,
+				8BD09DF71EE68FD200DF8BF0 /* TableViewFilterView.m */,
+			);
+			path = FilterContentViews;
+			sourceTree = "<group>";
+		};
+		8BD09DED1EE68FD200DF8BF0 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				8BD09DEE1EE68FD200DF8BF0 /* SecTagFilterCell.h */,
+				8BD09DEF1EE68FD200DF8BF0 /* SecTagFilterCell.m */,
+				8BD09DF01EE68FD200DF8BF0 /* SecTagFilterCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		8BD09DF11EE68FD200DF8BF0 /* SelectedConditionManager */ = {
+			isa = PBXGroup;
+			children = (
+				8BD09DF21EE68FD200DF8BF0 /* SelectedConditionManager.h */,
+				8BD09DF31EE68FD200DF8BF0 /* SelectedConditionManager.m */,
+			);
+			path = SelectedConditionManager;
+			sourceTree = "<group>";
+		};
+		8BD09DFC1EE68FD200DF8BF0 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				8BD09DFD1EE68FD200DF8BF0 /* FilterBarItem.h */,
+				8BD09DFE1EE68FD200DF8BF0 /* FilterBarItem.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		8BD09DFF1EE68FD200DF8BF0 /* support */ = {
+			isa = PBXGroup;
+			children = (
+				8BD09E001EE68FD200DF8BF0 /* TTGTagCollectionView */,
+				8BD09E091EE68FD200DF8BF0 /* UIView+AutoLayout.h */,
+				8BD09E0A1EE68FD200DF8BF0 /* UIView+AutoLayout.m */,
+				8BD09E0B1EE68FD200DF8BF0 /* UiViewExtension */,
+			);
+			path = support;
+			sourceTree = "<group>";
+		};
+		8BD09E001EE68FD200DF8BF0 /* TTGTagCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				8BD09E011EE68FD200DF8BF0 /* Assets */,
+				8BD09E031EE68FD200DF8BF0 /* Classes */,
+			);
+			path = TTGTagCollectionView;
+			sourceTree = "<group>";
+		};
+		8BD09E011EE68FD200DF8BF0 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				8BD09E021EE68FD200DF8BF0 /* .gitkeep */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		8BD09E031EE68FD200DF8BF0 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8BD09E041EE68FD200DF8BF0 /* .gitkeep */,
+				8BD09E051EE68FD200DF8BF0 /* TTGTagCollectionView.h */,
+				8BD09E061EE68FD200DF8BF0 /* TTGTagCollectionView.m */,
+				8BD09E071EE68FD200DF8BF0 /* TTGTextTagCollectionView.h */,
+				8BD09E081EE68FD200DF8BF0 /* TTGTextTagCollectionView.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		8BD09E0B1EE68FD200DF8BF0 /* UiViewExtension */ = {
+			isa = PBXGroup;
+			children = (
+				8BD09E0C1EE68FD200DF8BF0 /* UIView+Extension.h */,
+				8BD09E0D1EE68FD200DF8BF0 /* UIView+Extension.m */,
+			);
+			path = UiViewExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,10 +328,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B3621B21DAF502C0069FAD2 /* LaunchScreen.storyboard in Resources */,
+				8BD09E0F1EE68FD200DF8BF0 /* BaseFilterCell.xib in Resources */,
+				8BD09E131EE68FD200DF8BF0 /* SecTagFilterCell.xib in Resources */,
 				8B3621BE1DAF50950069FAD2 /* MainVc.xib in Resources */,
 				8B3621AF1DAF502C0069FAD2 /* Assets.xcassets in Resources */,
 				8B3621AD1DAF502C0069FAD2 /* Main.storyboard in Resources */,
-				8B0E0BFB1DB0BF700036ACB3 /* filterCell.xib in Resources */,
+				8BD09E1A1EE68FD200DF8BF0 /* .gitkeep in Resources */,
+				8BD09E1B1EE68FD200DF8BF0 /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,15 +345,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B0E0BF51DB09E9E0036ACB3 /* FilterConditionContainer.m in Sources */,
-				8B3621C51DAF50EB0069FAD2 /* LzFilterBarItemView.m in Sources */,
-				8B3621C21DAF50CC0069FAD2 /* lzFilterBarView.m in Sources */,
-				8B640C0A1ED663D000CEF362 /* LzDropDownBar.m in Sources */,
-				8B3621C81DAF52970069FAD2 /* FilterBarItem.m in Sources */,
+				8BD09E141EE68FD200DF8BF0 /* SelectedConditionManager.m in Sources */,
+				8BD09E0E1EE68FD200DF8BF0 /* BaseFilterCell.m in Sources */,
+				8BD09E101EE68FD200DF8BF0 /* FilterConditionContainer.m in Sources */,
 				8B3621A71DAF502C0069FAD2 /* AppDelegate.m in Sources */,
-				8B0E0BFA1DB0BF700036ACB3 /* filterCell.m in Sources */,
+				8BD09E151EE68FD200DF8BF0 /* TableSecTagFilterView.m in Sources */,
+				8BD09E1F1EE68FD200DF8BF0 /* UIView+Extension.m in Sources */,
+				8BD09E1D1EE68FD200DF8BF0 /* TTGTextTagCollectionView.m in Sources */,
+				8BD09E1C1EE68FD200DF8BF0 /* TTGTagCollectionView.m in Sources */,
 				8B3621BD1DAF50950069FAD2 /* MainVc.m in Sources */,
+				8BD09E171EE68FD200DF8BF0 /* LzDropDownBar.m in Sources */,
+				8BD09E1E1EE68FD200DF8BF0 /* UIView+AutoLayout.m in Sources */,
+				8BD09E191EE68FD200DF8BF0 /* FilterBarItem.m in Sources */,
+				8BD09E161EE68FD200DF8BF0 /* TableViewFilterView.m in Sources */,
+				8BD09E111EE68FD200DF8BF0 /* BaseFilterChooseView.m in Sources */,
+				8BD09E121EE68FD200DF8BF0 /* SecTagFilterCell.m in Sources */,
 				8B3621A41DAF502C0069FAD2 /* main.m in Sources */,
+				8BD09E181EE68FD200DF8BF0 /* LzFilterBarItemView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

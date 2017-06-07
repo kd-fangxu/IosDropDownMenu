@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface filterCell : UICollectionViewCell
+@interface BaseFilterCell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UIButton *btn;
 

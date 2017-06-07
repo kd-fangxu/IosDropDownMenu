@@ -21,7 +21,7 @@
     self= [self initWithFrame:frame];
     if(self){
         self.userInteractionEnabled=YES;
-        [self setBackgroundColor: [UIColor whiteColor]];
+//        [self setBackgroundColor: [UIColor whiteColor]];
         [self addClickGesture];
         [self setBaritem:item];
     }

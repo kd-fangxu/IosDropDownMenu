@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "LzDropDownBar.h"
-#import "lzFilterBarView.h"
-@interface MainVc : UIViewController <lzFilterBarViewDelegate,LzDropDownBarDelegate>{
-    lzFilterBarView * barView;
+#import "TableViewFilterView.h"
+#import "TableSecTagFilterView.h"
+@interface MainVc : UIViewController <LzDropDownBarDelegate>{
+    TableViewFilterView * tableFilterView;
+    TableSecTagFilterView * tagFilterView;
 }
 @property (nonatomic,strong)  LzDropDownBar  *dropDownTestBar;
 @end
